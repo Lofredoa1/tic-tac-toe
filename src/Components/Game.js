@@ -52,6 +52,12 @@ const Game = () => {
     setXisNext(!xIsNext);
   };
 
+  // Resets game back to the start
+  function restartGame () {
+    setTurnCount(0);
+    setXisNext(true)
+  }
+
   return (
     <>
       <h1>Tic-Tac-Toe</h1>
@@ -59,10 +65,8 @@ const Game = () => {
         <Board squares={history[turnCount]} onClick={handleClick} />
       </div>
       <div className="game-info">
-        <div>
             <h2>{winner ? "The Winner is: " + winner : "Next Player is: " + indicator}</h2>
-        </div>
-        <button>Start the Game</button>
+        <button className="restart" onClick={restartGame}>Restart the Game</button>
       </div>
     </>
   );

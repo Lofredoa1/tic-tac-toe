@@ -2,9 +2,9 @@ import React from "react";
 import "../App.css";
 
 const Square = (props) => {
-  
+  const style = props.value ? `square ${props.value}` : `square`;
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className={style} onClick={props.onClick}>
       {props.value}
     </button>
   );
